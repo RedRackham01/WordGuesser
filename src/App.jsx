@@ -52,14 +52,13 @@ function App() {
       setCurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
     } else {
       alert("Use Valid Words");
+      return;
     }
 
     if (currWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
       return;
-    }
-
-    if (currAttempt.attempt === 5 ) {
+    } else if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
       return;
     }
